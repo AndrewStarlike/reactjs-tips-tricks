@@ -8,7 +8,8 @@ const lakeList = [
     "First lake",
     "Another lake",
     "The fire lake"
-]
+];
+
 ReactDOM.render(
   <React.StrictMode>
     <App lakeList={lakeList} />
