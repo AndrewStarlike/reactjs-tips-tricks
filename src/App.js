@@ -1,4 +1,4 @@
-import React, {useState}  from 'react';
+import React, {useState, useEffect}  from 'react';
 import './App.css';
 import Phrase from './Phrase/Phrase';
 import GitHubUser from './GitHubUser/GitHubUser';
@@ -17,11 +17,23 @@ const bookList = [
 ];
 
 function App() {
+  const name = 'andrewstarlike';
   const [status, setStatus] = useState('Open');
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+      fetch(`https://api.github.com/users/${name}`)
+          .then(response => response.json())
+          .then(setData)
+          .catch(console.error);
+  }, [data]);
+
   return (
     <>
         <Phrase />
-        <GitHubUser name="andrewstarlike" />
+        if(data) {
+            <GitHubUser data={data} />
+        }
         <p>Status {status}</p>
         <button onClick=
                     {
