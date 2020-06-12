@@ -1,18 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App/App';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
-
-const lakeList = [
-    "First lake",
-    "Another lake",
-    "The fire lake"
-];
 
 ReactDOM.render(
   <React.StrictMode>
-    <App lakeList={lakeList} />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

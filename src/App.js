@@ -1,10 +1,22 @@
 import React, {useState}  from 'react';
 import './App.css';
-import Phrase from '../Phrase/Phrase';
-import GitHubUser from '../GitHubUser/GitHubUser';
-import Checkbox from '../Checkbox/Checkbox';
+import Phrase from './Phrase/Phrase';
+import GitHubUser from './GitHubUser/GitHubUser';
+import Checkbox from './Checkbox/Checkbox';
+import Library from './Library/Library';
 
-function App({lakeList}) {
+const lakeList = [
+    "First lake",
+    "Another lake",
+    "The fire lake"
+];
+
+const bookList = [
+  {'title': 'Fear', 'author': 'Thich Nhat Hanh'},
+  {'title': 'The five love languages', 'author': 'Gary Chapman'}
+];
+
+function App() {
   const [status, setStatus] = useState('Open');
   return (
     <>
@@ -26,6 +38,7 @@ function App({lakeList}) {
             }
         </ul>
         <Checkbox />
+        <Library books={bookList} />
     </>
   );
 }
