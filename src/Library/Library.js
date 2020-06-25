@@ -5,7 +5,7 @@ function Library({books}) {
     return (
         <div>
             {books.map(
-                book => <Book title={book.title} author={book.author} />
+                book => <Book key={book.id} title={book.title} author={book.author} />
             )}
         </div>
     )

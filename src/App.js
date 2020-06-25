@@ -12,8 +12,8 @@ const lakeList = [
 ];
 
 const bookList = [
-  {'title': 'Fear', 'author': 'Thich Nhat Hanh'},
-  {'title': 'The five love languages', 'author': 'Gary Chapman'}
+  {'id': 1, 'title': 'Fear', 'author': 'Thich Nhat Hanh'},
+  {'id': 2, 'title': 'The five love languages', 'author': 'Gary Chapman'}
 ];
 
 function App() {
@@ -31,9 +31,7 @@ function App() {
   return (
     <>
         <Phrase />
-        if(data) {
-            <GitHubUser data={data} />
-        }
+        {data ? <GitHubUser data={data} /> : null}
         <p>Status {status}</p>
         <button onClick=
                     {
